@@ -3,13 +3,43 @@
 {% block content %}
 
 {% for book in books %}
-{{book.title}}
-{{book.author.name}}
-{{book.id}}
+    <ul>
+        <li>
+            Title: {{book.title}}
+        </li>
+        <li>
+            Author: {{book.author.name}}
+        </li>
+        <li> 
+            Library ID: {{book.id}}
+        </li>
+    </ul>
+
 <form action={{book.id}} method = post>
     <button> Delete </button>
 </form>
 {% endfor %}
+
+<hr>
+
+<form action="/" method="post">
+<div>
+    <label for="title">Title:</label>
+    <input type="text" name ="title">
+</div>
+<div>
+    <label for="author">Author:</label>
+    <select name="author" id="author">
+    {% for author in all_authors %}
+    <option  value="{{author.id}}">{{author.name}}</option>   
+    {% endfor %}
+   </select>
+</div>
+
+<button type="submit">Add Book</button>
+
+</form>
+
 
 
 

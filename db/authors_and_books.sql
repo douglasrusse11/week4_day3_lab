@@ -14,3 +14,9 @@ CREATE TABLE books (
 
 INSERT INTO authors (name) VALUES ('JRR Tolkien');
 INSERT INTO books (title, author_id) VALUES ('The Hobbit', 1);
+INSERT INTO books (title, author_id) VALUES ('Fellowship of the Ring', 1);
+INSERT INTO books (title, author_id) VALUES ('The Two Towers', 1);
+INSERT INTO books (title, author_id) VALUES ('Return of the King', 1);
+INSERT INTO authors (name) VALUES ('Dan Koeppel');
+INSERT INTO books (title, author_id) VALUES ('Banana: The Fate of the fruit that changed the world', 2);
+
