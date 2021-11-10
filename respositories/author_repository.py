@@ -27,3 +27,13 @@ def delete(id):
     sql = f"DELETE FROM authors WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def books(author):
+    books = []
+    sql = f"SELECT * FROM books WHERE author_id = %s"
+    values = [author.id]
+    results = run_sql(sql, values)
+    for row in results:
+        book = Book(row["title"], author, row["id"])
+        books.append(book)
+    return books

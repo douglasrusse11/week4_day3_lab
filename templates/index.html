@@ -5,19 +5,24 @@
 {% for book in books %}
     <ul>
         <li>
-            Title: {{book.title}}
+            <a href="/{{book.id}}" style="color: black; text-decoration: none">Title: {{book.title}}</a>
         </li>
         <li>
-            Author: {{book.author.name}}
+            <a href="/books/{{book.author.id}}" style="color: black; text-decoration: none">Author: {{book.author.name}}</a>
         </li>
         <li> 
             Library ID: {{book.id}}
         </li>
     </ul>
 
-<form action={{book.id}} method = post>
+<div style="display: flex">
+<form action='/{{book.id}}/edit'' method = 'get'>
+    <button> Edit </button>
+</form>
+<form action='/{{book.id}}'' method = 'post'>
     <button> Delete </button>
 </form>
+</div>
 {% endfor %}
 
 <hr>
