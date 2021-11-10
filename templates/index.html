@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for book in books %}
+{{book.title}}
+{{book.author.name}}
+{{book.id}}
+<form action={{book.id}} method = post>
+    <button> Delete </button>
+</form>
+{% endfor %}
+
+
+
+{% endblock %}
